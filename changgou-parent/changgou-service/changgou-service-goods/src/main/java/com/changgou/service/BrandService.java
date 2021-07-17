@@ -16,11 +16,18 @@ public interface BrandService {
     List<Brand> findList(Brand brand);
 
     /**
-     * 条件分页搜索
+     * 分页搜索
      * @param page:当前页
      * @param size:每页条数
      */
     PageInfo<Brand> findPage(Integer page,Integer size);
+
+    /**
+     * 条件分页搜索
+     * @param page:当前页
+     * @param size:每页条数
+     */
+    PageInfo<Brand> findPage(Brand brand,Integer page,Integer size);
 
     /**
      * 增加品牌

@@ -33,6 +33,15 @@ public class BrandController {
     /**
      * 分页查询
      */
+    @PostMapping(value = "/search/{page}/{size}")
+    public Result<PageInfo<Brand>> findPage(@RequestBody Brand brand,@PathVariable(value = "page")Integer page,@PathVariable(value = "size")Integer size){
+        PageInfo<Brand> pageInfo = brandService.findPage(brand,page,size);
+        return new Result<PageInfo<Brand>>(true, StatusCode.OK,"分页查询成功",pageInfo);
+    }
+
+    /**
+     * 条件分页查询
+     */
     @GetMapping(value = "/search/{page}/{size}")
     public Result<PageInfo<Brand>> findPage(@PathVariable(value = "page")Integer page,@PathVariable(value = "size")Integer size){
         PageInfo<Brand> pageInfo = brandService.findPage(page,size);
