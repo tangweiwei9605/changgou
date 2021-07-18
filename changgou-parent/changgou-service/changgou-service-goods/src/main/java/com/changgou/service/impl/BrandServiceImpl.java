@@ -121,5 +121,19 @@ public class BrandServiceImpl implements BrandService {
         brandMapper.deleteByPrimaryKey(id);
     }
 
+    /***
+     * 根据分类ID查询品牌集合
+     * @param categoryid:分类ID
+     * @return
+     */
+    @Override
+    public List<Brand> findByCategory(Integer categoryid) {
+        //1.查询当前分类所对应的所有品牌信息
+        //2.根据品牌ID查询对应的品牌集合
+
+        //自己创建DAO实现查询
+        return brandMapper.findByCategory(categoryid);
+    }
+
 
 }

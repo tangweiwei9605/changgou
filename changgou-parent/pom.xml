@@ -15,7 +15,7 @@
         <module>changgou-web</module>
         <module>changgou-eureka</module>
         <module>changgou-common</module>
-        <module>changgou-service-goods</module>
+
     </modules>
 
     <parent>
